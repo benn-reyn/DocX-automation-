@@ -5,12 +5,12 @@ import pandas as pd
 def read_word_file(file_path):
     doc = Document(file_path)
     data = {
-        'prepared_for': 'Derrick Plumbing, Inc.',
+        'prepared_for': 'Confidential',
         'effective_dates': '',
         'pollution_liability_dates': '',
         'as_of_date': '',
         'totalPremium': '',
-        'company_name': 'Propel Insurance',
+        'company_name': 'Confidential',
         'parsing_error': 'ERROR'
     }
     
@@ -53,7 +53,7 @@ def read_word_file(file_path):
         if "estimated annual premium:" in text.lower():
             data['totalPremium'] = text.replace("Estimated Annual Premium:", "").strip()
             
-        if "location 1:  2226 ridge road, batesburg leesville, sc" in text.lower():
+        if "location 1: confidential" in text.lower():
             table1 = doc.tables[1]
             
             for i, row in enumerate(table1.rows):
